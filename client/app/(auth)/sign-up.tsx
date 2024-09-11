@@ -10,13 +10,18 @@ import {
 } from "../constants";
 import InputField from "../components/InputField";
 import { useState } from "react";
+import CustomButton from "../components/CustomButton";
 
-const SignUp = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const SignUp = () => {
+    const [form, setForm] = useState({
+      name: "",
+      email: "",
+      password: "",
+    });
+
+  const onSignUpPress = () => {
+    console.log(form);
+  };
 
   return (
     <ScrollView className="flex-1 bg-white">
@@ -35,7 +40,7 @@ const SignUp = () => {
           <InputField
             label="Name"
             placeholder="Enter your name"
-            icons={icons.person}
+            icon={icons.person}
             value={form.name}
             onChangeText={(value) =>
               setForm({
@@ -44,6 +49,33 @@ const SignUp = () => {
               })
             }
           />
+          <InputField
+            label="Email"
+            placeholder="Enter your email"
+            icon={icons.email}
+            value={form.email}
+            onChangeText={(value) =>
+              setForm({
+                ...form,
+                email: value,
+              })
+            }
+          />
+          <InputField
+            label="Password"
+            placeholder="Enter your password"
+            icon={icons.lock}
+            secureTextEntry={true}
+            value={form.password}
+            onChangeText={(value) =>
+              setForm({
+                ...form,
+                password: value,
+              })
+            }
+          />
+
+          <CustomButton title="Sign Up" onPress={ onSignUpPress } className="mt-6" />
         </View>
       </View>
     </ScrollView>
