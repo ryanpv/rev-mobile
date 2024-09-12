@@ -11,6 +11,7 @@ import home from "@/assets/icons/home.png";
 import lock from "@/assets/icons/lock.png";
 import person from "@/assets/icons/person.png";
 import profile from "@/assets/icons/profile.png";
+import google from "@/assets/icons/google.png";
 //
 
 
@@ -30,6 +31,7 @@ export const icons = {
   lock,
   person,
   profile,
+  google
 };
 
 
