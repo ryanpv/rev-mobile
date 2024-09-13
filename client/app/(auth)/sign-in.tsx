@@ -34,7 +34,7 @@ import OAuth from "../components/OAuth";
             className="z-0 w-full h-[250px]"
           />
           <Text className="text-2xl text-black font-JakartaSemiBold absolute bottom-5 left-5">
-            Welcome!
+            Welcome back!
           </Text>
         </View>
 
@@ -51,7 +51,7 @@ import OAuth from "../components/OAuth";
               })
             }
           />
-          
+
           <InputField
             label="Password"
             placeholder="Enter your password"
@@ -72,7 +72,7 @@ import OAuth from "../components/OAuth";
           <OAuth />
 
           <Link href="/sign-up" className="text-lg text-center text-general-200 mt-10">
-            <Text>Don't have an account?</Text>
+            <Text>Don't have an account? </Text>
             <Text className="text-primary-500">Sign up here</Text>
           </Link>
         </View>

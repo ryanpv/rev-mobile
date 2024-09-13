@@ -22,6 +22,15 @@ const OnBoarding = () => {
         <Text className="text-blue-500 text-md font-JakartaBold">Welcome to onboarding</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        onPress={ () => {
+          router.replace("/(root)/(tabs)/home")
+        }}
+        className="w-full flex justify-start items-start p-5"
+      >
+        <Text className="text-blue-500 text-md font-JakartaSemiBold">Skip account setup</Text>
+      </TouchableOpacity>
+
       <Swiper 
         ref={ swiperRef }
         loop={ false }
