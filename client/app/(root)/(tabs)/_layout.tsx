@@ -14,14 +14,14 @@ const TabIcon = ({
   focused: boolean;
 }) => (
   <View
-    className={`flex flex-row justify-center items-center ${focused ? "bg-general-300" : ""}`}
+    className={`flex flex-row justify-center items-center ${focused ? "bg-white" : ""}`}
   >
     <View
-      className={`rounded-full w-12 h-12 items-center justify-center ${focused ? "bg-blue-500" : ""}`}
+      className={`rounded-full w-10 h-10 items-center justify-center border-2  ${focused ? "bg-white border-[#71B8CA]" : "border-slate-300"}`}
     >
       <Image
         source={source}
-        tintColor="white"
+        tintColor={ `${ focused ? "#71B8CA" : "#cbd5e1" }` }
         resizeMode="contain"
         className="w-7 h-7"
       />
@@ -36,20 +36,27 @@ const Layout = () => {
       screenOptions={{
         tabBarActiveTintColor: "white",
         tabBarInactiveTintColor: "white",
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
+        tabBarLabelPosition: "below-icon",
         tabBarStyle: {
-          backgroundColor: "#333333",
-          borderRadius: 50,
-          paddingBottom: 0,
+          // backgroundColor: "#333333",
+          borderRadius: 25,
+          padding: 10,
+          paddingBottom: 10,
           overflow: "hidden",
           marginHorizontal: 20,
           marginBottom: 20,
-          height: 78,
+          height: 76,
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          flexDirection: "row",
+          // flexDirection: "row",
           position: "absolute",
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          alignContent: "flex-end",
+          color: "#71B8CA"
         }
       }}
     >
