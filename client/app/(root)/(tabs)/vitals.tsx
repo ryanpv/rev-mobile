@@ -10,12 +10,29 @@ import CustomButton from "@/app/components/CustomButton";
 import Foundation from '@expo/vector-icons/Foundation';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-const Vitals = () => {
-  const [cameraOn, setCameraOn] =
-    useState(false);
+import { useNavigation } from "expo-router";
 
-  const toggleCamera = () => {
-    setCameraOn(!cameraOn);
+const Vitals = () => {
+  const [cameraOn, setCameraOn] = useState(false);
+  const navigation = useNavigation();
+  const defaultTabBarStyle = {
+    borderRadius: 25,
+    padding: 10,
+    paddingBottom: 10,
+    overflow: "hidden",
+    marginHorizontal: 20,
+    marginBottom: 20,
+    height: 76,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    // flexDirection: "row",
+    position: "absolute",
+  };
+
+  const toggleCamera = (bool: boolean) => {
+    setCameraOn(bool);
+    navigation.setOptions({ tabBarStyle: bool ? { display: 'none' } : defaultTabBarStyle });
   };
 
   return (
@@ -38,7 +55,7 @@ const Vitals = () => {
               {/* BUTTON TOGGLE CAMERA  */}
               <View className="mx-8">
                 <CustomButton 
-                  onPress={ toggleCamera }
+                  onPress={ () => toggleCamera(true) }
                   title="Take Vitals"
                   IconLeft={ () => (
                     <View className="mx-2 px-1 py-0.5 border-2 border-white rounded">

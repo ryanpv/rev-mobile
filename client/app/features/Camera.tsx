@@ -5,7 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 interface CameraFunctionProps {
-  toggleCamera: () => void;
+  toggleCamera: (bool: boolean) => void;
 };
 
 const CameraFunction = ({ toggleCamera }: CameraFunctionProps) => {
@@ -32,7 +32,7 @@ const CameraFunction = ({ toggleCamera }: CameraFunctionProps) => {
   return (
     <View className="flex flex-1 justify-center">
       <CameraView facing={ facing } className="flex-1">
-          <TouchableOpacity onPress={ toggleCamera } className="self-start my-10 mx-8">
+          <TouchableOpacity onPress={ () => toggleCamera(false) } className="self-start my-10 mx-8">
             <AntDesign name="arrowleft" size={36} color="white" />
           </TouchableOpacity>
         <View className="flex-1 flex-row bg-transparent m-10">
