@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   View,
   Text,
+  StatusBar,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CameraFunction from "@/app/features/Camera";
@@ -15,28 +16,27 @@ const Vitals = () => {
 
   const toggleCamera = () => {
     setCameraOn(!cameraOn);
-    console.log("camera on/off");
-  }
+  };
 
   return (
     <SafeAreaView>
-      <View className="">
-        {/* Camera component  */}
+      <StatusBar hidden={ cameraOn } />
+      <View className="h-full">
+
         <View className="h-5/6">
-          {cameraOn ? (
-            // <Text>Camera is on</Text> 
+          { cameraOn ? (
             null
           ) : (
             <View className="gap-y-10">
               {/* USER NAME/ICON PLACEHOLDER  */}
-              <View className="flex flex-col items-center">
+              <View className="flex flex-col items-center pt-10">
                 <View className="flex border-2 border-blue-500 bg-blue-500 h-20 w-20 justify-center items-center rounded-full">
                   <MaterialIcons name="person-outline" size={50} color="white" />
                 </View>
-                <Text className="text-center font-JakartaBold text-2xl">Your Vitals</Text>
+                <Text className="text-center font-JakartaBold text-2xl mt-2">Your Vitals</Text>
               </View>
               {/* BUTTON TOGGLE CAMERA  */}
-              <View className="mx-5">
+              <View className="mx-8">
                 <CustomButton 
                   onPress={ toggleCamera }
                   title="Take Vitals"
@@ -50,7 +50,9 @@ const Vitals = () => {
 
             </View>
           )}
-          {cameraOn && (
+          
+          {/* CAMERA COMPONENT  */}
+          { cameraOn && (
             <CameraFunction toggleCamera={ toggleCamera } />
           )}
         </View>

@@ -55,6 +55,7 @@ const Layout = () => {
         },
         tabBarLabelStyle: {
           fontSize: 12,
+          fontWeight: "bold",
           alignContent: "flex-end",
           color: "#71B8CA"
         }
