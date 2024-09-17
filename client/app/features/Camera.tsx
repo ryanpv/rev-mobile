@@ -50,8 +50,6 @@ const CameraFunction = ({ toggleCamera }: CameraFunctionProps) => {
             <Ionicons name="camera-reverse-outline" size={36} color="white" />
           </TouchableOpacity>
         </View>
-        {/* <View className="flex-1 flex-row bg-transparent m-10 border-2 border-blue-500">
-        </View> */}
       </CameraView>
     </View>
   );

@@ -1,0 +1,14 @@
+{
+  "latest_vitals_taken": "2017-06-01T12:00:00Z",
+  "latest_vital_signs": {
+    "blood_pressure": {
+      "systolic": 130,
+      "diastolic": 80
+    },
+    "heart_rate": 74,
+    "respiratory_rate": 15,
+    "blood_oxygen": 98
+  },
+  "longest_streak": 15,
+  "current_streak": 4
+}
