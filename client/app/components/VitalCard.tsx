@@ -5,29 +5,23 @@ const VitalCard = () => {
 
 
   return (
-    <View className="flex flex-row flex-wrap justify-between h-full border-2 border-red-500">
+    <View className="flex flex-row flex-wrap justify-center">
       { Object.entries(testData.latest_vital_signs).map(([key, value]) => (
-        <View className="border-2 border-blue-400 h-40 w-40 text-center justify-center items-center">
+        <View className="rounded-3xl border-2 border-blue-400 h-40 w-40 text-center justify-center items-center m-3 p-2">
           { typeof value === "object" ? (
-            <View>
-
-            <Text>{ key }: { value.systolic } / { value.diastolic }</Text>
+            <View className="">
+             <Text>{ key }: { value.systolic } / { value.diastolic }</Text>
             </View>
-            ) : (
-              <View>
-
-            <Text>
-              { key } : { value }
-            </Text>
-              </View>
-            ) }
+          ) : (
+            <View className="">
+              <Text>
+                { key } : { value }
+              </Text>
+            </View>
+          ) }
         </View>
       )) }
-
     </View>
-    // <View className="flex flex-col h-40 w-40 border-2 border-blue-400 rounded-xl">
-    //   <Text>Latest Vitals</Text>
-    // </View>
   )
 }
 
