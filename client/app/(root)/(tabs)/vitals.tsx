@@ -13,6 +13,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { useNavigation } from "expo-router";
 import VitalCard from "@/app/components/VitalCard";
+import testData from "../../testData.json"
 
 const Vitals = () => {
   const [cameraOn, setCameraOn] = useState(false);
@@ -38,7 +39,7 @@ const Vitals = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="">
         <StatusBar hidden={ cameraOn } />
 
         <View className="h-full">
@@ -72,10 +73,10 @@ const Vitals = () => {
                   </View>
 
                   <View className="my-10">
-                    <Text className="text-center">Latest Vitals</Text>
+                    <Text className="text-center">Latest Vitals: { testData.latest_vitals_taken }</Text>
                   </View>
       
-                  <VitalCard />
+                  <VitalCard testData={ testData } />
                 </View>
               </ScrollView>
             )}
