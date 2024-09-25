@@ -1,7 +1,22 @@
+import { useEffect } from "react";
 import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Explore = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://192.168.2.43:8000")
+        const data = await response.json()
+        console.log("DATA: ", data)
+      } catch (error) {
+        console.log("ERRORRR: ", error)
+      }
+    };
+    
+    fetchData()
+    
+  }, [])
   return (
     <SafeAreaView>
 
