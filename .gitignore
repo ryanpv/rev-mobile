@@ -1,3 +1,4 @@
 /server/phase_shifted_rPPG
 server/base-requirements.txt
 venv
+server/.env
