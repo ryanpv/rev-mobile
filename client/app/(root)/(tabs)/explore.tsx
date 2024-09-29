@@ -6,7 +6,7 @@ const Explore = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://192.168.2.43:8000")
+        const response = await fetch("http://192.168.1.32:8000") // Ensure proper IP (changes with different networks)
         const data = await response.json()
         console.log("DATA: ", data)
       } catch (error) {
